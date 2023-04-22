@@ -6,7 +6,9 @@ server:
 spring:
   application:
     name: account
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.31.252:8848,192.168.31.252:8858,192.168.31.252:8868
+  profiles:
+    active: local
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.winglibetry.account.db.*
