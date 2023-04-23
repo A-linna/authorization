@@ -1,4 +1,4 @@
-package com.wingliberty.account.constant;
+package com.wingliberty.authorization.constant;
 
 /**
  * @author aiLun

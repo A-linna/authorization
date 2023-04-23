@@ -1,6 +1,6 @@
-package com.wingliberty.account.mapper;
+package com.wingliberty.authorization.mapper;
 
-import com.wingliberty.account.db.UserDO;
+import com.wingliberty.authorization.db.UserDO;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

@@ -1,4 +1,4 @@
-package com.wingliberty.account.dto;
+package com.wingliberty.authorization.dto;
 
 import lombok.Data;
 
@@ -9,8 +9,10 @@ import javax.validation.constraints.NotBlank;
  * @date 2023/4/22-19:00
  */
 @Data
-public class PhoneDTO {
+public class PhoneVerificationCodeDTO {
     @NotBlank(message = "手机号不能为空")
     private String phone;
+    //验证码
+    private String code;
 
 }

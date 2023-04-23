@@ -1,4 +1,4 @@
-package com.wingliberty.account.exc;
+package com.wingliberty.authorization.exc;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,11 +9,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class AccountException extends RuntimeException{
+public class AuthorizationException extends RuntimeException{
     private int code;
     private String message;
 
-    public AccountException(ErrorCode errorCode) {
+    public AuthorizationException(ErrorCode errorCode) {
         this.code = errorCode.code;
         this.message = errorCode.desc;
     }

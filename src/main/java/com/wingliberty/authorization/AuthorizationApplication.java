@@ -1,9 +1,10 @@
-package com.wingliberty.account;
+package com.wingliberty.authorization;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author aiLun
@@ -12,9 +13,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-@MapperScan("com.wingliberty.account.mapper")
-public class AccountApplication {
+@MapperScan("com.wingliberty.authorization.mapper")
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+public class AuthorizationApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class);
+        SpringApplication.run(AuthorizationApplication.class);
     }
 }

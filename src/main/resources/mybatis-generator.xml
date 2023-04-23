@@ -32,7 +32,7 @@
         <!-- 生成model类，实体Bean
 		targetPackage 指定model类的包名
 		targetProject:生成model类的位置 -->
-        <javaModelGenerator targetPackage="com.wingliberty.account.db"
+        <javaModelGenerator targetPackage="com.wingliberty.authorization.db"
                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -52,7 +52,7 @@
 		targetPackage指定Mapper接口类的名
 		targetPackage：指定生成的Mapper接口放的位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.wingliberty.account.mapper"
+                             targetPackage="com.wingliberty.authorization.mapper"
                              targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>

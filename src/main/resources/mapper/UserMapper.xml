@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wingliberty.account.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.wingliberty.account.db.UserDO">
+  <resultMap id="BaseResultMap" type="com.wingliberty.authorization.db.UserDO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="head_image" jdbcType="VARCHAR" property="headImage" />
@@ -22,7 +22,7 @@
     where id = #{id,jdbcType=BIGINT}
   </select>
 
-  <select id="selectByPhone" resultType="com.wingliberty.account.db.UserDO">
+  <select id="selectByPhone" resultType="com.wingliberty.authorization.db.UserDO">
       select
       <include refid="Base_Column_List"/>
       from user where phone=#{phone}
@@ -31,7 +31,7 @@
     delete from user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.wingliberty.account.db.UserDO">
+  <insert id="insert" parameterType="com.wingliberty.authorization.db.UserDO">
     insert into user (id, user_name, head_image, 
       password, phone, nick_name, 
       status, create_time, update_time
@@ -41,7 +41,7 @@
       #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.wingliberty.account.db.UserDO">
+  <insert id="insertSelective" parameterType="com.wingliberty.authorization.db.UserDO">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -102,7 +102,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wingliberty.account.db.UserDO">
+  <update id="updateByPrimaryKeySelective" parameterType="com.wingliberty.authorization.db.UserDO">
     update user
     <set>
       <if test="userName != null">
@@ -132,7 +132,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wingliberty.account.db.UserDO">
+  <update id="updateByPrimaryKey" parameterType="com.wingliberty.authorization.db.UserDO">
     update user
     set user_name = #{userName,jdbcType=VARCHAR},
       head_image = #{headImage,jdbcType=VARCHAR},
