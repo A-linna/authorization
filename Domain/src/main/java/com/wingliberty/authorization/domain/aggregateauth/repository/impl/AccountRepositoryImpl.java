@@ -21,6 +21,10 @@ public class AccountRepositoryImpl  implements AccountRepository {
     @Override
     public void save(AccountEntity accountEntity) {
         accountMapper.insertSelective(accountEntity);
+    }
 
+    @Override
+    public AccountEntity findByUserName(String userName) {
+        return   accountMapper.findByUserName(userName);
     }
 }

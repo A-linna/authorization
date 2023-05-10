@@ -1,8 +1,7 @@
 package com.wingliberty.authorization.interfaces.assembler;
 
-import com.wingliberty.authorization.domain.aggregateauth.entity.AccountEntity;
-import com.wingliberty.authorization.interfaces.dto.AccountDTO;
-import org.springframework.beans.BeanUtils;
+import com.wingliberty.authorization.domain.aggregateauth.entity.AuthEntity;
+import com.wingliberty.authorization.interfaces.dto.AuthDTO;
 
 import java.util.Objects;
 
@@ -12,12 +11,13 @@ import java.util.Objects;
  */
 public class AccountAssembler {
 
-    public static AccountEntity assembler(AccountDTO accountDTO) {
-        if (Objects.isNull(accountDTO)) {
+    public static AuthEntity assembler(AuthDTO authDTO) {
+        if (Objects.isNull(authDTO)) {
             return null;
         }
-        AccountEntity accountEntity = new AccountEntity();
-        BeanUtils.copyProperties(accountDTO, accountEntity);
-        return accountEntity;
+        AuthEntity authEntity = new AuthEntity();
+        authEntity.setUserName(authDTO.getUserName())
+                .setPassword(authDTO.getPassword());
+        return authEntity;
     }
 }

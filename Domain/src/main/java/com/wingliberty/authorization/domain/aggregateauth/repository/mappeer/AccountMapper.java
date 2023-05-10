@@ -1,6 +1,7 @@
 package com.wingliberty.authorization.domain.aggregateauth.repository.mappeer;
 
 import com.wingliberty.authorization.domain.aggregateauth.entity.AccountEntity;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author aiLun
@@ -9,4 +10,6 @@ import com.wingliberty.authorization.domain.aggregateauth.entity.AccountEntity;
 public interface AccountMapper {
 
     void insertSelective(AccountEntity accountEntity);
+
+    AccountEntity findByUserName(@Param("userName") String userName);
 }

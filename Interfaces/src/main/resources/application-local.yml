@@ -1,5 +1,4 @@
 spring:
-
   cloud:
     nacos:
       discovery:
@@ -15,6 +14,11 @@ spring:
     password: lilinna0825
   main:
     allow-bean-definition-overriding: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+
 mybatis:
   type-aliases-package: com.wingliberty.authorization.domain.aggregateauth.entity.*
   mapper-locations: classpath*:/mapper/**/*Mapper.xml

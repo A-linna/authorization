@@ -10,4 +10,6 @@ public interface AccountRepository {
 
 
     void save(AccountEntity accountEntity);
+
+    AccountEntity findByUserName(String userName);
 }

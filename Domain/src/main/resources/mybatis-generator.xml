@@ -32,7 +32,7 @@
         <!-- 生成model类，实体Bean
 		targetPackage 指定model类的包名
 		targetProject:生成model类的位置 -->
-        <javaModelGenerator targetPackage="com.wingliberty.authorization.infrastructure.repository.db.entity"
+        <javaModelGenerator targetPackage="com.wingliberty.authorization.domain.aggregateauth.entity"
                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -52,7 +52,7 @@
 		targetPackage指定Mapper接口类的名
 		targetPackage：指定生成的Mapper接口放的位置 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.wingliberty.authorization.infrastructure.util.repository.db.mapper"
+                             targetPackage="com.wingliberty.authorization.domain.aggregateauth.repository.mappeer"
                              targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -60,8 +60,8 @@
 
         <!--指定数据库-->
         <!-- 数据库表名及对应的Java模型类名 -->
-        <table tableName="account" domainObjectName="AccountEntity"
-               mapperName="AccountMapper"
+        <table tableName="auth" domainObjectName="AuthEntity"
+               mapperName="AuthMapper"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
