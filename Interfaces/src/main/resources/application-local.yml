@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.31.252:8848,192.168.31.252:8858,192.168.31.252:8868
+      config:
+        shared-configs[0]:
+          data-id: authconfig.yml
+          refresh: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.97.163.217:3306/auth?characterEncoding=utf-8&serverTime=GMT%2B8
+    username: root
+    password: uNb!t2V@
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+
+mybatis:
+  type-aliases-package: com.wingliberty.authorization.domain.aggregateauth.entity.*
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml

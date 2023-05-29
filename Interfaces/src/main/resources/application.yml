@@ -1,0 +1,10 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /auth
+
+spring:
+  application:
+    name: authorization
+  profiles:
+    active: local
