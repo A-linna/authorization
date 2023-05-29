@@ -10,10 +10,8 @@ import com.wingliberty.authorization.interfaces.dto.AuthDTO;
 import com.wingliberty.authorization.interfaces.dto.TokenDTO;
 import com.wingliberty.authorization.interfaces.dto.UserDTO;
 import com.wingliberty.common.dto.response.Result;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -62,8 +60,8 @@ public class UserController {
      * @return
      */
     @PostMapping("/check_toke")
-    public Result<UserDTO> checkToken(@RequestBody Token token) {
-        AuthEntity authEntity = userService.checkToken(token.getAccessToken(), TokenType.ACCESS_TOKEN);
+    public Result<UserDTO> checkToken(@RequestBody String token) {
+        AuthEntity authEntity = userService.checkToken(token, TokenType.ACCESS_TOKEN);
         UserDTO userDTO = UserAssembler.assembler(authEntity);
         return Result.success(userDTO);
     }
@@ -79,5 +77,13 @@ public class UserController {
     public Result<TokenDTO> refreshToken(@RequestBody Token token) {
         Token token1= userService.refreshToken(token.getRefreshToken());
         return null;
+    }
+
+    @Value("${server.port}")
+    private String port;
+
+    @GetMapping("/test")
+    public Result<String> test() {
+        return Result.success(port);
     }
 }

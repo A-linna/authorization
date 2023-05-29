@@ -9,9 +9,9 @@ spring:
           refresh: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth?characterEncoding=utf-8&serverTime=GMT%2B8
+    url: jdbc:mysql://47.97.163.217:3306/auth?characterEncoding=utf-8&serverTime=GMT%2B8
     username: root
-    password: lilinna0825
+    password: uNb!t2V@
   main:
     allow-bean-definition-overriding: true
   redis:
